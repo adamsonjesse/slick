@@ -1,0 +1,79 @@
+block vars
+
+doctype html
+html
+	head
+		title SLICK | #{title}
+		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', type='text/css')
+		//link(rel='stylesheet', href='css/landingStyle.css', type='text/css')
+		link(rel='stylesheet', href='css/styles.css', type='text/css')
+		script(src='/js/validateForms.js')
+		script(src='//code.jquery.com/jquery-1.12.0.min.js')
+		script(src='/js/Chart.js')
+		//link(rel='shortcut icon', href='images/favicon.png')
+		link(rel='icon', sizes='32x32', href='images/favicon.png')
+	body
+		.navbar.navbar-inverse.navbar-static-top(role='navigation')
+			.container
+				.navbar-header
+					button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand(href='/') SLICK
+				.collapse.navbar-collapse
+					ul.nav.navbar-nav
+						if user
+							if(title == 'Dashboard')
+								li
+									a(href='/dashboard') Dashboard
+							else
+								li
+									a(href='/dashboard') Dashboard
+							if(title == 'Raw Data')
+								li.active
+									a(href='/rawData') Raw Data
+							else
+								li
+									a(href='/rawData') Raw Data
+							if(title == 'Change Password')
+								li.active
+									a(href='/changePassword') Change Password
+							else
+								li
+									a(href='/changePassword') Change Password
+							li
+								a(href='/logout') Logout
+						else
+							if(title == 'Login')
+								li.active
+									a(href='/login') Login
+							else
+								li
+									a(href='/login') Login
+							if(title == 'Register')
+								li.active
+									a(href='/register') Register
+							else
+								li
+									a(href='/register') Register
+							if(title == 'Team')
+								li.active
+									a(href='/team') Team
+							else
+								li
+									a(href='/team') Team
+		#error-message.container
+			if messages.error
+				.alert.alert-danger
+					div= messages.error
+			if messages.info
+				.alert.alert-info
+					div= messages.info
+			if messages.success
+				.alert.alert-success
+					div= messages.success
+		#page.container-fluid
+			block content
+			block body

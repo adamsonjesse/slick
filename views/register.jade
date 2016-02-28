@@ -1,0 +1,42 @@
+extends base
+
+block vars
+	- var title = 'Register'
+
+block body
+	#innerPage.container
+		form(name='registrationForm' method='POST' onsubmit='return validateRegistrationForm()' style='width: 300px')
+			legend Create an Account
+			input(type='hidden', name='_csrf', value=csrfToken)
+			.form-group
+				label(for='realName') Full Name
+				if realName
+					input.form-control(type='text', name='realName', value='#{realName}', autofocus)
+				else
+					input.form-control(type='text', name='realName', autofocus)
+			.form-group
+				label(for='aliasName') SLICK Meter ID
+				if aliasName
+					input.form-control(type='text', name='aliasName', value='#{aliasName}')
+				else
+					input.form-control(type='text', name='aliasName')
+			.form-group
+				label(for='email') Email
+				if email
+					input.form-control(type='text', name='email', value='#{email}')
+				else
+					input.form-control(type='text', name='email')
+			.form-group
+				label(for='password') Password
+				if password
+					input.form-control(type='password', name='password', value='#{password}')
+				else
+					input.form-control(type='password', name='password')
+			.form-group
+				label(for='repeatPassword') Repeat Password
+				if repeatPassword
+					input.form-control(type='password', name='repeatPassword', value='#{repeatPassword}')
+				else
+					input.form-control(type='password', name='repeatPassword')
+			button.btn.btn-primary(type='submit') Register
+			a.btn.btn-link(href='/login') Login

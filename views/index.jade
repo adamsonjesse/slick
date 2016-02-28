@@ -1,0 +1,146 @@
+extends base
+
+block vars
+	- var title = "Landing"
+
+block body
+	//link(rel='shortcut icon', href='img/favicon.png')
+	//link(rel='icon', sizes='32x32', href='img/favicon.png')
+	// Custom Theme files
+	meta(name='viewport', content='width=device-width, initial-scale=1')
+	script(type='application/x-javascript').
+		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+	meta(name='keywords', content='Suthri App Responsive web template, Bootstrap Web Templates, Flat Web Templates, AndriodCompatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola webdesign')
+	// jQuery (necessary for Bootstrap's JavaScript plugins)
+	//script(src='js/jquery.min.js')
+	//script(src='//code.jquery.com/jquery-1.12.0.min.js')
+	//script(src='js/Chart.js')
+	// Custom Theme files
+	link(rel='stylesheet', href='css/landingStyle.css', type='text/css')
+	//link(href='css/bootstrap.css', rel='stylesheet', type='text/css')
+	// Google Fonts
+	link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800', rel='stylesheet', type='text/css')
+	link(href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900', rel='stylesheet', type='text/css')
+	//script(src='js/wow.min.js')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js')
+	
+	link(href='css/animate.css', rel='stylesheet', type='text/css')
+	script.
+		new WOW().init();
+	script(type='text/javascript', src='js/easing.js')
+	script(type='text/javascript').
+		jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+		event.preventDefault();
+		$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+		});
+	#home.header
+		.container
+			.col-md-8.header-matter
+				.logo.wow.bounceInLeft.animated
+					a(href='index.html')
+						img(src='img/logo.png', alt='')
+				h1.wow.bounceIn.animated
+					| Take Control Of Your Electricy
+					br
+					|  In No Time With 
+					span SLICK
+				p.wow.fadeInUp.animated
+					| An easy to use app that is bundled with the SLICK home meter
+					br
+					|  with a user-friendly interface
+				form.ap-but.down.wow.fadeInUp.animated
+					input(type='submit', value='')
+					form.ap-but.down.wow.fadeInUp.animated
+						input(type='button', value='')
+			.col-md-4.iphone.wow.bounceInRight.animated
+				img(src='img/iphone.png', alt='')
+	// Header Part ENds Here
+	// Graph Part Starts Here
+	.graph.wow.fadeInUp.animated
+		.container
+			.graph-img
+				img(src='img/iphone-frame.png', alt='')
+				.chart.wow.bounceIn.animated
+			h3.wow.fadeInUp.animated Performance Graph
+			p.wow.fadeInUp.animated
+				| You might not think about how much electricity you use until you get your bill, but SLICK will! Check your In-App energy graph from time to time to keep track of your energy usage and simultaneously keep your energy costs low. You can even post your energy savings to your favorite Social Media Networks
+	// Graph Part Starts Here
+	// - Usage part Starts Here
+	.usage.wow.fadeInUp.animated
+		.container
+			.usage-top.wow.bounceIn.animated
+				p
+					| A simplified way to connect with your meter. Manage and control your energy usage through this user-friendly platform with up-to-the-minute cloud synced energy readings.
+				.clearfix
+				.first-img
+					img(src='img/first-image.jpg', alt='')
+				.second-img
+					img(src='img/second-image.jpg', alt='')
+				.third-img
+					img(src='img/third-image.jpg', alt='')
+	// - Usage part Ends Here
+	// Features Part Starts here
+	#about.features.wow.fadeInUp.animated
+		.container
+			.col-md-4.feature-data
+				.feat-da-grid.wow.bounceIn.animated
+					h4 AWESOME FEATURES
+					p
+						| We made SLICK great to begin with and it will only get better in time with great firmware updates, an awesome app and an energy meter that seems right at home in your house
+				.feat-da-grid.wow.bounceIn.animated
+					h4 FULLY CUSTOMIZABLE
+					p
+						| When we said "Take control of your electriciy" we meant it. You can manage and gauge your electricity usage, set usage limits and alerts that let you keep track of your home even when you're away.
+				.feat-da-grid.wow.bounceIn.animated
+					h4 Features
+					p
+						| Pay your bill through the app, manage your energy costs and be apart of the energy revolution by reducing your carbon footprint.
+			.col-md-4.feature-img.wow.bounceIn.animated
+				img(src='img/featu-image.png', alt='')
+			.col-md-4.feature-data.d_2
+				.feat-da-grid.wow.bounceIn.animated
+					h4 The first step to carbon neutrality
+					p
+						| By using the SLICK meter you can manage the amount of energy you use, thereby easily cut waste and reduce your contribution to global carbon emissions. We wanted to make becoming energy consious as easy as possible and SLICK embodies that vision.
+				.feat-da-grid.wow.bounceIn.animated
+					h4 8 PREDEFINED COLOR SCHEMES
+					p
+						| Get the SLICK meter in any color you want to match the decor of your home.
+				.feat-da-grid.wow.bounceIn.animated
+					h4 MODERN DESIGN
+					p
+						| The sleek design of our hardware is inspired by the best in car, computer and hardware manufactures  from all over the world, because why shouldn't saving energy look this good?
+			.clearfix
+	// Features Part Ends here
+	// Packages part was here
+	// Footer Part Starts here
+	.footer.wow.bounceIn.animated
+		.container
+			h3 Ready to give it a try?
+			form.ap-but.down.wow.fadeInUp.animated
+				input(type='submit', value='')
+				input(type='button', value='')
+			.foot-bot
+				.mail.wow.fadeInLeft.animated(data-wow-delay='0.5s', style='visibility: visible; -webkit-animation: fadeInLeft 0.5s;')
+					h3 SEND US AN EMAIL
+					a(href='mailto:example@email.com') akua@errandbouyja.com
+				.social.wow.fadeInRight.animated(data-wow-delay='0.5s', style='visibility: visible; -webkit-animation: fadeInLeft 0.5s;')
+					h3 Follow us
+					ul.social-list
+						li
+							a.fb(href='#')
+						li
+							a.tw(href='#')
+				.clearfix
+		.foot-nav
+			ul
+				li
+					p
+						| Copyright © 2015 SLICK  
+						a(href='http://www.about.me/akua.walters' style={color:'#2ecc71'}) Akua Walters
+				li
+					a.scroll(href='#about') About us
+				li
+					a(href='#') Support us

@@ -1,0 +1,14 @@
+extends base
+
+block vars
+	- var title = 'Verify'
+
+block body
+	#innerPage.container
+		form(name='verifyForm' method='POST' onsubmit='return validateVerifyForm()' style='width: 300px')
+			legend Verify
+			input(type='hidden', name='_csrf', value=csrfToken)
+			.form-group
+				label(for='verify') Verification Code (check your email)
+				input.form-control(type='text', name='verify', autofocus)
+			button.btn.btn-primary(type='submit') Complete

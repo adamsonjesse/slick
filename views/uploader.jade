@@ -1,0 +1,22 @@
+extends base
+
+block vars
+	- var title = 'Uploader'
+
+block body
+	#innerPage.container
+		form(name='dataForm' method='POST' style='width: 300px')
+			legend Template for data upload:
+			.form-group
+				label(for='sender') Sender SLICK Meter ID
+				input.form-control(type='text', name='sender', maxlength="10", autofocus)
+			.form-group
+				label(for='dateTimeSent') Date+Time
+				input.form-control(type='datetime-local', name='dateTimeSent')
+			.form-group
+				label(for='volts') Volts
+				input.form-control(type='number', name='volts', min="-1000", max="1000", step="0.0001")
+			.form-group
+				label(for='amps') Amps
+				input.form-control(type='number', name='amps', min="-1000", max="1000", step="0.0001")
+			button.btn.btn-primary(type='submit') Upload

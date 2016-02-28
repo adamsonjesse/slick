@@ -1,0 +1,51 @@
+extends base
+
+block vars
+	- var title = 'Dashboard'
+
+block body
+	#innerPage.container
+
+		#accountInfo(style='position: relative; width: 950px; height: 250px; background-color:white;')
+			.divider-lines(style='position: absolute; left: 0px; top: 13px; width: 1000px; height: 1px; background-color:black;')
+			.divider-text(style='border-radius: 2px; border-style: none; position: absolute; left: 440px; top: 1px; width: 130px; height: 25px; background-color:white; z-index: 5; text-align: center;') ACCOUNT INFO
+			.user-info(style='position: absolute; left: 0px; top: 38px; width: 333px; height: 200px; background-color: orange;')
+			.account-info(style='position: absolute; left: 333px; top: 38px; width: 334px; height: 200px; background-color: blue;')
+			.meter-info(style='position: absolute; left: 667px; top: 38px; width: 333px; height: 200px; background-color: teal;')
+
+		#billingHistory(style='position: relative; width: 950px; height: 250px; background-color:white;')
+			.divider-lines(style='position: relative; left: 0px; top: 13px; width: 1000px; height: 1px; background-color:black;')
+			.divider-text(style='border-radius: 2px; border-style: none; position: relative; left: 425px; top: 1px; width: 150px; height: 25px; background-color:white; z-index: 5; text-align:center;' ) BILLING HISTORY
+
+			table(style='position: absolute; left: 0px; top: 25px; width: 1000px; height: 200px;')
+				thead
+					//tr: th UploadedData
+				tbody
+					tr
+						th Start Date
+						th End Date
+						th Total KWH
+						th Total $
+						th PDF
+					each value in json.labels
+						tr
+							td(style='width: 24%') test
+							td(style='width: 24%') test
+							td(style='width: 24%') test
+							td(style='width: 24%') test
+							td(style='width: 4%')
+								img(src='img/pdf32.png' alt='' style='width: 32px; height: 32px;')
+		//	p #{json.labels[1]}
+		//	p #{json.datasets[0].data[0]}
+
+		#usage(style='position: relative; width: 950px; height: 500px; background-color:white;')
+			.divider-lines(style='position: relative; left: 0px; top: 13px; width: 1000px; height: 1px; background-color:black;')
+			.divider-text(style='border-radius: 2px; border-style: none; position: relative; left: 465px; top: 1px; width: 70px; height: 25px; background-color:white; z-index: 5; text-align:center;') USAGE
+
+			canvas#myChart(width='1000', height='400', style='border:0px solid')
+
+			script.
+				var data = !{JSON.stringify(json)};
+				var ctx = document.getElementById("myChart").getContext("2d");
+				//var myNewChart = new Chart(ctx).Line(data);
+				var myNewChart = new Chart(ctx).Bar(data);

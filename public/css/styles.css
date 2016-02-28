@@ -1,0 +1,17 @@
+
+.container-fluid {
+    padding: 0px;
+}
+
+@media (max-width: 797px) {
+    body { 
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+/*
+.navbar-static-top {
+
+	margin-bottom: 0px;
+}
+*/

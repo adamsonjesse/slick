@@ -1,0 +1,14 @@
+extends base
+
+block vars
+	- var title = 'Reset Password'
+
+block body
+	#innerPage.container
+		form(name='resetForm' method='POST' onsubmit='return validateResetForm()' style='width: 300px')
+			legend Reset Password
+			input(type='hidden', name='_csrf', value=csrfToken)
+			.form-group
+				label(for='email') Email
+				input.form-control(type='text', name='email', autofocus)
+			button.btn.btn-primary(type='submit') Reset

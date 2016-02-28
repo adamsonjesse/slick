@@ -1,0 +1,35 @@
+extends base
+
+block vars
+	- var title = "Raw Data"
+
+block body
+	#innerPage.container
+		p Here is just a dump of the database:
+		
+		div
+			table
+				thead
+					tr: th UploadedData
+				tbody
+					tr
+						th ID
+						th sender
+						th dateTimeReceived
+						th volts
+						th amps
+						th kwh
+					each value in json
+						tr
+							td(style='width: 5%').
+								#{value.ID}
+							td(style='width: 15%').
+								#{value.sender}
+							td(style='width: 30%').
+								#{value.dateTimeReceived.toString().substring(0,33)}
+							td(style='width: 10%').
+								#{value.volts}
+							td(style='width: 10%').
+								#{value.amps}
+							td(style='width: 10%').
+								#{value.kwh}

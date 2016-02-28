@@ -1,0 +1,21 @@
+extends base
+
+block vars
+	- var title = 'Reset Password'
+
+block body
+	#innerPage.container
+		form(name='resetVerifyForm' method='POST' onsubmit='return validateResetVerifyForm()' style='width: 300px')
+			legend Reset Password
+			input(type='hidden', name='_csrf', value=csrfToken)
+			input(type='hidden', name='email', value=email)
+			.form-group
+				label(for='email') Verification Code (check your email)
+				input.form-control(type='text', name='verify', autofocus)
+			.form-group
+				label(for='password') Password
+				input.form-control(type='password', name='password')
+			.form-group
+				label(for='repeatPassword') Repeat Password
+				input.form-control(type='password', name='repeatPassword')
+			button.btn.btn-primary(type='submit') Complete

@@ -1,0 +1,19 @@
+extends base
+
+block vars
+	- var title = 'Login'
+
+block body
+	#innerPage.container
+		form(name='loginForm' method='POST' onsubmit='return validateLoginForm()' style='width: 300px')
+			legend Login
+			input(type='hidden', name='_csrf', value=csrfToken)
+			.form-group
+				label(for='email') Email
+				input.form-control(type='text', name='email', autofocus)
+			.form-group
+				label(for='password') Password
+				input.form-control(type='password', name='password')
+			button.btn.btn-primary(type='submit') Login
+			a.btn.btn-link(href='/register') Register
+			a.btn.btn-link(href='/reset') Reset Password
